@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAspNetCoreApp", "src\MinimalAspNetCoreApp\MinimalAspNetCoreApp.csproj", "{AAFC2931-7AD8-44DC-8E3C-AE847771D162}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultAspNetCoreMvcApp", "src\DefaultAspNetCoreMvcApp\DefaultAspNetCoreMvcApp.csproj", "{342FC559-DAAD-4A00-94A8-208E7EC238FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DefaultAspNetCoreApiApp", "src\DefaultAspNetCoreApiApp\DefaultAspNetCoreApiApp.csproj", "{A0317700-6850-48A7-BF5A-5651E6E97D25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6863DA35-755F-49D0-B2AC-21D857D7C8CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CC9A77C4-BC65-407D-8AAE-1273E63480BF}"
+	ProjectSection(SolutionItems) = preProject
+		docs\ASP.NET - iTechArt 2018.pptx = docs\ASP.NET - iTechArt 2018.pptx
+		docs\ASP.NET CORE - iTechArt 2018.pptx = docs\ASP.NET CORE - iTechArt 2018.pptx
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAFC2931-7AD8-44DC-8E3C-AE847771D162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFC2931-7AD8-44DC-8E3C-AE847771D162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFC2931-7AD8-44DC-8E3C-AE847771D162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFC2931-7AD8-44DC-8E3C-AE847771D162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342FC559-DAAD-4A00-94A8-208E7EC238FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342FC559-DAAD-4A00-94A8-208E7EC238FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342FC559-DAAD-4A00-94A8-208E7EC238FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342FC559-DAAD-4A00-94A8-208E7EC238FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0317700-6850-48A7-BF5A-5651E6E97D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0317700-6850-48A7-BF5A-5651E6E97D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0317700-6850-48A7-BF5A-5651E6E97D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0317700-6850-48A7-BF5A-5651E6E97D25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AAFC2931-7AD8-44DC-8E3C-AE847771D162} = {6863DA35-755F-49D0-B2AC-21D857D7C8CA}
+		{342FC559-DAAD-4A00-94A8-208E7EC238FD} = {6863DA35-755F-49D0-B2AC-21D857D7C8CA}
+		{A0317700-6850-48A7-BF5A-5651E6E97D25} = {6863DA35-755F-49D0-B2AC-21D857D7C8CA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C3F6B5C-8DB4-4B89-9CEE-FC1A0984CA52}
+	EndGlobalSection
+EndGlobal
