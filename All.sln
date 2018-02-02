@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{CC9A77C4-BC65-407D-8AAE-1273E63480BF}"
 	ProjectSection(SolutionItems) = preProject
 		docs\ASP.NET - iTechArt 2018.pptx = docs\ASP.NET - iTechArt 2018.pptx
+		docs\ASP.NET CORE - Common Tasks - iTechArt 2018.pptx = docs\ASP.NET CORE - Common Tasks - iTechArt 2018.pptx
 		docs\ASP.NET CORE - iTechArt 2018.pptx = docs\ASP.NET CORE - iTechArt 2018.pptx
 	EndProjectSection
 EndProject
