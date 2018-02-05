@@ -2,9 +2,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
-public class Program
+namespace MinimalAspNetCoreApp
 {
-    static void Main() => WebHost.Start(c => c.Response.WriteAsync("Hello World!")).WaitForShutdown();
+    public class Program
+    {
+        static void Main() => WebHost.Start(c => c.Response.WriteAsync("Hello World!")).WaitForShutdown();
+    }
 }
 
 /*
