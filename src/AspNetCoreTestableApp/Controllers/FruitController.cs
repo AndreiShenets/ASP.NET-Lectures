@@ -77,6 +77,10 @@ namespace AspNetCoreTestableApp.Controllers
                 await FruitService.AddFruitAsync(fruit);
                 return Ok();
             }
+            catch (ArgumentException)
+            {
+                return BadRequest();
+            }
             catch (Exception)
             {
                 return this.StatusCode(500);
