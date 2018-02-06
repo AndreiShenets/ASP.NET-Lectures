@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AspNetCoreQuartzApp.Jobs;
+using AspNetCoreQuartzApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 
 namespace AspNetCoreQuartzApp
 {
@@ -19,22 +17,36 @@ namespace AspNetCoreQuartzApp
         }
 
         public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-        }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Currency API", Version = "v1" });
+            });
+
+            services.AddJobs();
+
+            services.AddSingleton<IJobInformationService, JobInformationService>();
+            services.AddSingleton<ICurrencyService, CurrencyService>();
+
+            services.Configure<List<JobSettings>>(Configuration.GetSection(nameof(JobSettings)));
+        }
+        
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
             {
-                app.UseDeveloperExceptionPage();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Currency API");
+            });
 
             app.UseMvc();
+
+            app.UseJobs();
         }
     }
 }
