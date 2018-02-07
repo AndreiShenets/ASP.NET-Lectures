@@ -1,4 +1,5 @@
 ﻿using AspNetCoreSignalRApp.Hubs;
+using AspNetCoreSignalRApp.Hubs.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,6 +28,8 @@ namespace AspNetCoreSignalRApp
                 {
                     options.LoginPath = "/Account/Login/";
                 });
+
+            services.AddSingleton<IUserTracker, UserTracker>();
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

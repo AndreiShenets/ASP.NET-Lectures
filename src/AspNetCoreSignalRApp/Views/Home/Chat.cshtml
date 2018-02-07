@@ -1,10 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Chat";
 }
+<style>
+    #messages {
+        margin: 0;
+        background: white;
+    }
+
+    #messages li{
+        display:list-item;
+        float: none;
+    }
+
+    #users {
+        margin: 0;
+        background: white;
+    }
+
+    #users li{
+        display:list-item;
+        float: none;
+    }
+</style>
 <div id="chat-area">
-    <ul id="messages"></ul>
     <ul id="users">
         <li><b>Users online</b></li>
+    </ul>
+    <ul id="messages">
+        <li><b>Messages</b></li>
     </ul>
     <div class="clear">
     </div>
@@ -17,7 +40,7 @@
 <script>
     let transportType = signalR.TransportType[getParameterByName('transport')] || signalR.TransportType.WebSockets;
     let logger = new signalR.ConsoleLogger(signalR.LogLevel.Information);
-    let connection = new signalR.HubConnection('/chat', { transport: transportType, logger: logger });
+    let connection = new signalR.HubConnection('/hub/chat', { transport: transportType, logger: logger });
 
     connection.onclose(e => {
         if (e) {
