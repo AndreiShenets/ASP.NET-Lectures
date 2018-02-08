@@ -24,5 +24,10 @@ namespace EntityFrameworkCoreApp.Web
         {
             CreateMap<Email, EmailDTO>();
         }
+
+        private void InitializeQuestion()
+        {
+            CreateMap<Question, QuestionDTO>();
+        }
     }
 }

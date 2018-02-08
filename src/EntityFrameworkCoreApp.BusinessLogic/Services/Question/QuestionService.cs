@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EntityFrameworkCoreApp.BusinessLogic.Services
 {
@@ -16,6 +18,16 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
                 logger)
         {
 
+        }
+
+        public Task<Question> GetQuestionAsync(int questionId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Question>> GetQuestionsAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }
