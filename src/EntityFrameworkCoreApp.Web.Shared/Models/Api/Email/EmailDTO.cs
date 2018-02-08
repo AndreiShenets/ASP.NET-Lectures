@@ -1,9 +1,8 @@
-﻿using EntityFrameworkCoreApp.DataStorage.Models;
-using System;
+﻿using System;
 
-namespace EntityFrameworkCoreApp.BusinessLogic.Services
+namespace EntityFrameworkCoreApp.Web.Models.Api
 {
-    public class Email
+    public class EmailDTO
     {
         public Guid EmailId { get; set; }
 
@@ -18,13 +17,5 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
         public DateTime GenerateDateTimeUTC { get; set; }
 
         public DateTime? SendDateTimeUTC { get; set; }
-    }
-
-    public partial class BusinessLogicMappingProfile
-    {
-        private void InitializeEmail()
-        {
-            CreateMap<EmailEntity, Email>();
-        }
     }
 }

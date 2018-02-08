@@ -22,31 +22,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinimalAspNetCoreApp", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFrameworkCoreApp", "EntityFrameworkCoreApp", "{C07B4438-910E-42E8-B38D-85EE56E43EA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreApp.Web", "src\EntityFrameworkCoreApp.Web\EntityFrameworkCoreApp.Web.csproj", "{8E58E396-96E7-4FB9-8238-FABD77345D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreApp.Web", "src\EntityFrameworkCoreApp.Web\EntityFrameworkCoreApp.Web.csproj", "{8E58E396-96E7-4FB9-8238-FABD77345D38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreApp.BusinessLogic", "src\EntityFrameworkCoreApp.BusinessLogic\EntityFrameworkCoreApp.BusinessLogic.csproj", "{CBDDCB4F-B6EC-43E7-AB7E-F7EB74707508}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreApp.BusinessLogic", "src\EntityFrameworkCoreApp.BusinessLogic\EntityFrameworkCoreApp.BusinessLogic.csproj", "{CBDDCB4F-B6EC-43E7-AB7E-F7EB74707508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreApp.DataStorage", "src\EntityFrameworkCoreApp.DataStorage\EntityFrameworkCoreApp.DataStorage.csproj", "{C0293739-2BB5-4DDE-939D-8591242D8DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkCoreApp.DataStorage", "src\EntityFrameworkCoreApp.DataStorage\EntityFrameworkCoreApp.DataStorage.csproj", "{C0293739-2BB5-4DDE-939D-8591242D8DEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreQuartzApp", "src\AspNetCoreQuartzApp\AspNetCoreQuartzApp.csproj", "{72982811-A3FF-4C44-A298-B2915A712873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreQuartzApp", "src\AspNetCoreQuartzApp\AspNetCoreQuartzApp.csproj", "{72982811-A3FF-4C44-A298-B2915A712873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAPISwaggerApp", "src\AspNetCoreAPISwaggerApp\AspNetCoreAPISwaggerApp.csproj", "{ACC0C374-CF0A-4A0C-84AD-330064496A68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreAPISwaggerApp", "src\AspNetCoreAPISwaggerApp\AspNetCoreAPISwaggerApp.csproj", "{ACC0C374-CF0A-4A0C-84AD-330064496A68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreAuthApp", "src\AspNetCoreAuthApp\AspNetCoreAuthApp.csproj", "{90ACC0F7-E24A-47DC-81A9-95B54FF9A370}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreAuthApp", "src\AspNetCoreAuthApp\AspNetCoreAuthApp.csproj", "{90ACC0F7-E24A-47DC-81A9-95B54FF9A370}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreSimpleAuthApp", "src\AspNetCoreSimpleAuthApp\AspNetCoreSimpleAuthApp.csproj", "{3446D27C-3869-4E4D-9E2B-30F773BB9559}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSimpleAuthApp", "src\AspNetCoreSimpleAuthApp\AspNetCoreSimpleAuthApp.csproj", "{3446D27C-3869-4E4D-9E2B-30F773BB9559}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthApps", "AuthApps", "{FE936796-2917-44A6-BD91-6FA18C9D7E74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreSignalRApp", "src\AspNetCoreSignalRApp\AspNetCoreSignalRApp.csproj", "{B24D18EC-50B0-47E4-B9FF-7BBDD380209A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSignalRApp", "src\AspNetCoreSignalRApp\AspNetCoreSignalRApp.csproj", "{B24D18EC-50B0-47E4-B9FF-7BBDD380209A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreSimpleAzureApp", "src\AspNetCoreSimpleAzureApp\AspNetCoreSimpleAzureApp.csproj", "{103C5F14-34FF-47DE-8C6B-0CA6102A2835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreSimpleAzureApp", "src\AspNetCoreSimpleAzureApp\AspNetCoreSimpleAzureApp.csproj", "{103C5F14-34FF-47DE-8C6B-0CA6102A2835}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestableApp", "TestableApp", "{9D17B7A1-CBCA-4EB4-AB48-05F5CEA7C8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTestableApp", "src\AspNetCoreTestableApp\AspNetCoreTestableApp.csproj", "{A0B9A5BD-AF0B-46BE-A80A-C47B8D7550F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTestableApp", "src\AspNetCoreTestableApp\AspNetCoreTestableApp.csproj", "{A0B9A5BD-AF0B-46BE-A80A-C47B8D7550F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreTestableApp.Tests", "src\AspNetCoreTestableApp.Tests\AspNetCoreTestableApp.Tests.csproj", "{E7E204F4-7B08-4206-85CF-17EC3468F459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreTestableApp.Tests", "src\AspNetCoreTestableApp.Tests\AspNetCoreTestableApp.Tests.csproj", "{E7E204F4-7B08-4206-85CF-17EC3468F459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkCoreApp.Web.Shared", "src\EntityFrameworkCoreApp.Web.Shared\EntityFrameworkCoreApp.Web.Shared.csproj", "{47532B8A-F7A1-48EB-8597-B9A2A0808DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,6 +116,10 @@ Global
 		{E7E204F4-7B08-4206-85CF-17EC3468F459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7E204F4-7B08-4206-85CF-17EC3468F459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7E204F4-7B08-4206-85CF-17EC3468F459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47532B8A-F7A1-48EB-8597-B9A2A0808DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47532B8A-F7A1-48EB-8597-B9A2A0808DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47532B8A-F7A1-48EB-8597-B9A2A0808DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47532B8A-F7A1-48EB-8597-B9A2A0808DD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -137,6 +143,7 @@ Global
 		{9D17B7A1-CBCA-4EB4-AB48-05F5CEA7C8B4} = {6863DA35-755F-49D0-B2AC-21D857D7C8CA}
 		{A0B9A5BD-AF0B-46BE-A80A-C47B8D7550F2} = {9D17B7A1-CBCA-4EB4-AB48-05F5CEA7C8B4}
 		{E7E204F4-7B08-4206-85CF-17EC3468F459} = {9D17B7A1-CBCA-4EB4-AB48-05F5CEA7C8B4}
+		{47532B8A-F7A1-48EB-8597-B9A2A0808DD0} = {C07B4438-910E-42E8-B38D-85EE56E43EA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7C3F6B5C-8DB4-4B89-9CEE-FC1A0984CA52}

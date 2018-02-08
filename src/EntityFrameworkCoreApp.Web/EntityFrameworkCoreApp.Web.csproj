@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Client\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EntityFrameworkCoreApp.BusinessLogic\EntityFrameworkCoreApp.BusinessLogic.csproj" />
+    <ProjectReference Include="..\EntityFrameworkCoreApp.Web.Shared\EntityFrameworkCoreApp.Web.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
         public QuestionService(
             IHttpContextAccessor contextAccessor,
             IMapper mapper,
-            ILogger logger) : base(
+            ILogger<QuestionService> logger) : base(
                 contextAccessor,
                 mapper,
                 logger)
