@@ -20,7 +20,7 @@ namespace AspNetCoreSimpleAuthApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel loginModel)
         {
-            if (LoginUser(loginModel.Username, loginModel.Password))
+            if (IsUserPasswordValid(loginModel.Username, loginModel.Password))
             {
                 var claims = new List<Claim>
                 {
@@ -49,7 +49,7 @@ namespace AspNetCoreSimpleAuthApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private bool LoginUser(string username, string password)
+        private bool IsUserPasswordValid(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username))
             {

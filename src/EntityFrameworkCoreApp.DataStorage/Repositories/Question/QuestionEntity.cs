@@ -13,6 +13,16 @@ namespace EntityFrameworkCoreApp.DataStorage.Models
 
         public string Description { get; set; }
 
+        public string Email { get; set; }
+
+        public string Token { get; set; }
+
+        public bool IsVerified { get; set; }
+
+        public bool IsClosed { get; set; }
+
+        public DateTime CreateDateTimeUTC { get; set; }
+
         public virtual ICollection<AnswerEntity> Answers { get; set; }
     }
 

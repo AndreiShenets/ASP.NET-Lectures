@@ -27,7 +27,7 @@ namespace EntityFrameworkCoreApp.DataStorage
             {
                 options.UseSqlServer(
                     configuration["ConnectionStrings:DefaultConnection"],
-                    sqlOptions => sqlOptions.MigrationsAssembly(Assembly.GetCallingAssembly().GetName().Name));
+                    sqlOptions => sqlOptions.MigrationsAssembly(typeof(DataStorageExtensions).Assembly.GetName().Name));
             });
         }
 

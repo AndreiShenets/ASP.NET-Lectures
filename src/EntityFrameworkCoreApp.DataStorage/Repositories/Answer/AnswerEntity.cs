@@ -12,6 +12,8 @@ namespace EntityFrameworkCoreApp.DataStorage.Models
 
         public string Description { get; set; }
 
+        public DateTime CreateDateTimeUTC { get; set; }
+
         public virtual QuestionEntity Question { get; set; }
 }
 

@@ -28,6 +28,15 @@ namespace EntityFrameworkCoreApp.Web
         private void InitializeQuestion()
         {
             CreateMap<Question, QuestionDTO>();
+            CreateMap<CreateQuestionResult, CreateQuestionResultDTO>();
+            CreateMap<VerifyQuestionResult, VerifyQuestionResultDTO>();
+            CreateMap<CloseQuestionResult, CloseQuestionResultDTO>();
+        }
+
+        private void InitializeAnswer()
+        {
+            CreateMap<Answer, AnswerDTO>();
+            CreateMap<CreateQuestionResult, CreateQuestionResultDTO>();
         }
     }
 }

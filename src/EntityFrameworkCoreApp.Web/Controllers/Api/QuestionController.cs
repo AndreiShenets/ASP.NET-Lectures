@@ -25,11 +25,11 @@ namespace EntityFrameworkCoreApp.Web.Controllers.Api
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetQuestionsAsync()
+        public async Task<IActionResult> GetQuestionsAsync([FromQuery] int? from = 0)
         {
             try
             {
-                var questions = await QuestionService.GetQuestionsAsync();
+                var questions = await QuestionService.GetQuestionsAsync(from.Value, 10);
                 var questionsResult = Mapper.Map<IEnumerable<Question>, IEnumerable<QuestionDTO>>(questions);
 
                 return Ok(questionsResult);
@@ -37,6 +37,29 @@ namespace EntityFrameworkCoreApp.Web.Controllers.Api
             catch (Exception exception)
             {
                 return Exception(exception, "Failed to get questions");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateQuestionAsync([FromBody] CreateQuestionDTO createQuestionDTO)
+        {
+            try
+            {
+                var command = new CreateQuestionCommand
+                {
+                    Description = createQuestionDTO.Description,
+                    Email = createQuestionDTO.Email,
+                    Name = createQuestionDTO.Name
+                };
+
+                var createQuestionResult = await QuestionService.CreateQuestionAsync(command);
+                var result = Mapper.Map<CreateQuestionResult, CreateQuestionResultDTO> (createQuestionResult);
+
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                return Exception(exception, "Failed to create question");
             }
         }
     }

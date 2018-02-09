@@ -28,7 +28,7 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
             this.Mapper = mapper;
         }
 
-        protected virtual void DisposeStores()
+        protected virtual void DisposeRepositories()
         {
 
         }
@@ -40,7 +40,7 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
 
             if (disposing)
             {
-                DisposeStores();
+                DisposeRepositories();
                 // Free any other managed objects here.
                 //
             }
