@@ -1,0 +1,27 @@
+﻿@model QuestionsViewModel
+
+<div class="py-5">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var question in Model.Questions)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                            <p class="card-text">@question.Name</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <form>
+                                        <button asp-action="Question" asp-controller="Question" asp-route-id="@question.QuestionId" type="submit" class="btn btn-sm btn-outline-secondary">View</button>
+                                    </form>
+                                </div>
+                                <small class="text-muted">@question.AnswersCount answers</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

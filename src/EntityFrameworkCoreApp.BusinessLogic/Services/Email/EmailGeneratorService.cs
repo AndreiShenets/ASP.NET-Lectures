@@ -22,7 +22,9 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
         public EmailEntity GenerateVerifyQuestionEmail(QuestionEntity questionEntity)
         {
             string emailTitle = "Please verify question";
-            string body = $"Token to verify: {questionEntity.Token}, Question Id: {questionEntity.QuestionId}";
+            string body = $"Links:" + Environment.NewLine +
+                $"Verify: http://localhost:55668/Email/Verify?token={questionEntity.Token}&questionId={questionEntity.QuestionId}" + Environment.NewLine +
+                $"Close: http://localhost:55668/Email/Close?token={questionEntity.Token}&questionId={questionEntity.QuestionId}";
             
             return new EmailEntity()
             {

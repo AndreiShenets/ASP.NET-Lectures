@@ -6,8 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Client\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\" />
+    <Folder Include="Views\Answer\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

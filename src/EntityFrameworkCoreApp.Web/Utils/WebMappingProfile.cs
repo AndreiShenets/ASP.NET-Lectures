@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EntityFrameworkCoreApp.BusinessLogic.Services;
+using EntityFrameworkCoreApp.Web.Models;
 using EntityFrameworkCoreApp.Web.Models.Api;
 using System.Linq;
 using System.Reflection;
@@ -28,6 +29,8 @@ namespace EntityFrameworkCoreApp.Web
         private void InitializeQuestion()
         {
             CreateMap<Question, QuestionDTO>();
+            CreateMap<Question, QuestionViewModel>();
+
             CreateMap<CreateQuestionResult, CreateQuestionResultDTO>();
             CreateMap<VerifyQuestionResult, VerifyQuestionResultDTO>();
             CreateMap<CloseQuestionResult, CloseQuestionResultDTO>();

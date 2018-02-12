@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace EntityFrameworkCoreApp.Web.Models.Api
+namespace EntityFrameworkCoreApp.Web.Models
 {
-    public class QuestionDTO
+    public class QuestionViewModel
     {
         public Guid QuestionId { get; set; }
 

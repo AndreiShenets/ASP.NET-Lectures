@@ -41,6 +41,8 @@ namespace EntityFrameworkCoreApp.Web
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>
@@ -48,7 +50,12 @@ namespace EntityFrameworkCoreApp.Web
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
             });
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Question}/{action=Questions}/{id?}");
+            });
         }
     }
 }

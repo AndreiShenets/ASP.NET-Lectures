@@ -1,0 +1,21 @@
+﻿@model CreateQuestionViewModel
+
+<section class="jumbotron text-center bg-light">
+    <div class="container">
+        <h1 class="jumbotron-heading">Create new question</h1>
+        <form asp-controller="Question" asp-action="Create" method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <input type="text" asp-for="Name" class="form-control" placeholder="Enter a title" required="">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <input type="email" asp-for="Email" name="Email" class="form-control" placeholder="Enter an email" value="" required="">
+                </div>
+            </div>
+            <div class="mb-3">
+                <textarea type="text" asp-for="Description" name="Description" class="form-control" placeholder="Enter a description" value="" required=""></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary my-2">Create</button>
+        </form>
+    </div>
+</section>

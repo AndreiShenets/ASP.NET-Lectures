@@ -21,7 +21,9 @@ namespace EntityFrameworkCoreApp.DataStorage.Repositories
         {
             cancellationToken.ThrowIfCancellationRequested();
             ThrowIfDisposed();
-            var result = await Entities.FirstOrDefaultAsync(t => t.QuestionId == questionId, cancellationToken);
+            var result = await Entities
+                .Include(t => t.Answers)
+                .FirstOrDefaultAsync(t => t.QuestionId == questionId, cancellationToken);
             return result;
         }
 
@@ -30,7 +32,9 @@ namespace EntityFrameworkCoreApp.DataStorage.Repositories
             cancellationToken.ThrowIfCancellationRequested();
             ThrowIfDisposed();
             var entitiesQuery = ApplyFilter(Entities, filter);
-            var result = await entitiesQuery.ToListAsync(cancellationToken);
+            var result = await entitiesQuery
+                .Include(t => t.Answers)
+                .ToListAsync(cancellationToken);
             return result;
         }
 
