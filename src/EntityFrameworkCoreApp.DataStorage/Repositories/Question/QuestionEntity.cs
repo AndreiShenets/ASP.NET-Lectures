@@ -13,15 +13,19 @@ namespace EntityFrameworkCoreApp.DataStorage.Models
 
         public string Description { get; set; }
 
-        public string Email { get; set; }
+        public string EmailAddress { get; set; }
 
         public string Token { get; set; }
 
         public bool IsVerified { get; set; }
 
         public bool IsClosed { get; set; }
-
+        
         public DateTime CreateDateTimeUTC { get; set; }
+
+        public Guid? EmailId { get; set; }
+
+        public EmailEntity Email { get; set; }
 
         public virtual ICollection<AnswerEntity> Answers { get; set; }
     }
@@ -41,6 +45,13 @@ namespace EntityFrameworkCoreApp.DataStorage.Models
                 .HasForeignKey(t => t.QuestionId)
                 .HasPrincipalKey(t => t.QuestionId)
                 .IsRequired(true)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder
+                .HasOne(t => t.Email)
+                .WithOne(t => t.Question)
+                .HasForeignKey<QuestionEntity>(b => b.EmailId)
+                .IsRequired(false)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

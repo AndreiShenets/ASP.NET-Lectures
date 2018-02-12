@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EntityFrameworkCoreApp.Web.Models.Api.Answer
+namespace EntityFrameworkCoreApp.Web.Models.Api
 {
     public class CreateAnswerDTO
     {

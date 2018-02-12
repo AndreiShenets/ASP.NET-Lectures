@@ -39,7 +39,7 @@ namespace EntityFrameworkCoreApp.Web.Controllers.Api
                 return Exception(exception, "Failed to get questions");
             }
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> CreateQuestionAsync([FromBody] CreateQuestionDTO createQuestionDTO)
         {
@@ -60,6 +60,50 @@ namespace EntityFrameworkCoreApp.Web.Controllers.Api
             catch (Exception exception)
             {
                 return Exception(exception, "Failed to create question");
+            }
+        }
+
+        [HttpPost("verify")]
+        public async Task<IActionResult> VerifyQuestionAsync([FromBody] VerifyQuestionDTO verifyQuestionDTO)
+        {
+            try
+            {
+                var command = new VerifyQuestionCommand
+                {
+                    QuestionId = verifyQuestionDTO.QuestionId,
+                    Token = verifyQuestionDTO.Token
+                };
+
+                var verifyQuestionResult = await QuestionService.VerifyQuestionAsync(command);
+                var result = Mapper.Map<VerifyQuestionResult, VerifyQuestionResultDTO>(verifyQuestionResult);
+
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                return Exception(exception, "Failed to verify question");
+            }
+        }
+
+        [HttpPost("close")]
+        public async Task<IActionResult> CloseQuestionAsync([FromBody] CloseQuestionDTO closeQuestionDTO)
+        {
+            try
+            {
+                var command = new CloseQuestionCommand
+                {
+                    QuestionId = closeQuestionDTO.QuestionId,
+                    Token = closeQuestionDTO.Token
+                };
+
+                var closeQuestionResult = await QuestionService.CloseQuestionAsync(command);
+                var result = Mapper.Map<CloseQuestionResult, CloseQuestionResultDTO>(closeQuestionResult);
+
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                return Exception(exception, "Failed to close question");
             }
         }
     }

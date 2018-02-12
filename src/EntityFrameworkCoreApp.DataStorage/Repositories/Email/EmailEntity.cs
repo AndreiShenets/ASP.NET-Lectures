@@ -19,6 +19,8 @@ namespace EntityFrameworkCoreApp.DataStorage.Models
         public DateTime GenerateDateTimeUTC { get; set; }
 
         public DateTime? SendDateTimeUTC { get; set; }
+
+        public QuestionEntity Question { get; set; }
     }
 
     class EmailEntityConfiguration : IEntityTypeConfiguration<EmailEntity>

@@ -11,9 +11,10 @@ using System;
 namespace EntityFrameworkCoreApp.DataStorage.Migrations
 {
     [DbContext(typeof(QADbContext))]
-    partial class QADbContextModelSnapshot : ModelSnapshot
+    [Migration("20180212082738_Added_EmailReference")]
+    partial class Added_EmailReference
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

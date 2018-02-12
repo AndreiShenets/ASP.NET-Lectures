@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 
 namespace EntityFrameworkCoreApp.BusinessLogic.Services
 {
-    public class QuestionService : BaseService, IQuestionService, IDisposable
+    internal class QuestionService : BaseService, IQuestionService, IDisposable
     {
         protected IQuestionRepository QuestionRepository { get; set; }
 
+        protected IEmailGeneratorService EmailGeneratorService { get; set; }
+        
         public QuestionService(
+            IEmailGeneratorService emailGeneratorService,
             IQuestionRepository questionRepository,
             IHttpContextAccessor contextAccessor,
             IMapper mapper,
@@ -23,6 +26,7 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
                 logger)
         {
             QuestionRepository = questionRepository ?? throw new ArgumentNullException(nameof(questionRepository));
+            EmailGeneratorService = emailGeneratorService ?? throw new ArgumentNullException(nameof(emailGeneratorService));
         }
 
         public async Task<CloseQuestionResult> CloseQuestionAsync(CloseQuestionCommand command)
@@ -54,18 +58,37 @@ namespace EntityFrameworkCoreApp.BusinessLogic.Services
         public async Task<CreateQuestionResult> CreateQuestionAsync(CreateQuestionCommand command)
         {
             ThrowIfDisposed();
+
+            string questionToken = GenerateToken();
             QuestionEntity questionEntity = new QuestionEntity()
             {
                 Description = command.Description,
                 Name = command.Name,
-                Email = command.Email,
+                EmailAddress = command.Email,
                 IsClosed = false,
                 IsVerified = false,
                 CreateDateTimeUTC = DateTime.UtcNow,
-                Token = GenerateToken()
+                Token = questionToken
             };
-            
-            await QuestionRepository.CreateAsync(questionEntity, CancellationToken);
+
+            using (var transaction = QuestionRepository.Context.Database.BeginTransaction())
+            {
+                try
+                {
+                    await QuestionRepository.CreateAsync(questionEntity, CancellationToken);
+                    var emailEntity = EmailGeneratorService.GenerateVerifyQuestionEmail(questionEntity);
+                    questionEntity.Email = emailEntity;
+                    await QuestionRepository.UpdateAsync(questionEntity, CancellationToken);
+
+                    transaction.Commit();
+                }
+                catch (Exception exception)
+                {
+                    string errorMesssage = "Error while saving question";
+                    Logger.LogError(exception, errorMesssage);
+                    return new CreateQuestionResult(new Error(errorMesssage, errorMesssage));
+                }
+            }            
             return new CreateQuestionResult(questionEntity.QuestionId);
         }
 

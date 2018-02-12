@@ -13,7 +13,7 @@ namespace EntityFrameworkCoreApp.Web.Controllers.Api
     public class EmailController : BaseApiController
     {
         protected IEmailService EmailService { get; set; }
-
+        
         public EmailController(
             IEmailService emailService,
             IMapper mapper, 

@@ -11,6 +11,7 @@ namespace EntityFrameworkCoreApp.BusinessLogic
         {
             return services
                 .AddScoped<IEmailService, EmailService>()
+                .AddScoped<IEmailGeneratorService, EmailGeneratorService>()
                 .AddScoped<IAnswerService, AnswerService>()
                 .AddScoped<IQuestionService, QuestionService>()
                 .AddDataStorage(configuration);
