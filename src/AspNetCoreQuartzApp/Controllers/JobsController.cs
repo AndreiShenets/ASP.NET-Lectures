@@ -35,7 +35,7 @@ namespace AspNetCoreQuartzApp.Controllers
                     return BadRequest();
                 }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
                 return StatusCode(500);
             }
