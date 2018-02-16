@@ -1,5 +1,4 @@
-﻿using EntityFrameworkCoreApp.Web.Models.Api;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace EntityFrameworkCoreApp.Web.Models
 {

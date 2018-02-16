@@ -1,0 +1,23 @@
+﻿@model EmailsViewModel
+
+<div class="py-5">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var email in Model.Emails)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                            <p class="card-text">@email.Title</p>
+                            <p style="white-space: pre-line" class="card-text">@email.Body</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-muted">To: @email.SendTo</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
